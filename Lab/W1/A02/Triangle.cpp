@@ -92,5 +92,5 @@ Point Triangle::centerG() {
     vt.add(A.toVector(Point(0, 0)));
     vt.add(B.toVector(Point(0, 0)));
     vt.add(C.toVector(Point(0, 0)));
-    return Point(vt.x / 6.0, vt.y / 6.0);
+    return Point(vt.x / 3.0, vt.y / 3.0);
 }

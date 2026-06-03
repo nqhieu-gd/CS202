@@ -6,6 +6,8 @@ private:
     int num;
     int denom;
 
+    void revert();
+
 public:
 
     Fraction();
@@ -24,8 +26,6 @@ public:
     void divide(Fraction b);
 
     void multiply(Fraction b);
-
-    void revert();
 
     void reduce();
 
