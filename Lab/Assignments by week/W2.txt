@@ -1,0 +1,68 @@
+Lab02-Constructors-
+Destructors
+Lab02-Constructors-Destructors
+VNU-HCM, HCMUS, FIT, SE
+CS202 - Programming Systems
+25A01 - 02
+DINH Ba Tien, PhD TRUONG Phuoc Loc, MSc HO Tuan Thanh, MSc
+
+A: YY: 02
+H: YY: 07
+
+
+For assignment 01 - 04, please do the following tasks:
+1. Implement at least 5 constructors. Also add a cout statement to show that the method in called.
+2. Implement the destructor. Also add a cout statement to show that the method in called.
+3. Implement a toString()
+4. Implement a clone() method to create a new object having values as the existing object. It works like the copy constructor.
+Finally, in the main function, create a series of objects and output them to the console. Run the program and inspect the output.
+For example, with the Point2D class:
+1. 5 constructors
+a. Point2D();
+b. Point2D (int x);
+
+c. Point2D (int x, int y);
+d. Point2D (const Point2D &other);
+e. Point2D (string s); // s = �15,-2�
+f. cout statement: cout << �Point2D::Default cons� << endl;
+2. Destructor:  Point2D();
+a. cout statement: cout << �Point2D::Destructor� << endl;
+3. toString() method: Point 15, -2 � string �15,-2)
+4. clone() method: p2 = p1.clone();
+
+Assignment 1
+Class. Point2D: x, y
+
+Assignment 2
+Class Triangle: Point2D A, B, C
+
+Assignment 3
+Class MyIntArray: int*a, int n
+
+Assignment 4
+Student: int id, char* fullname, char* address, double gpa
+
+Assignment 5
+Draw a class diagram and write a program in C++ with OOP style that can be used by a small theater to sell tickets for performances. The theater?s auditorium has 15 rows of seats, with 30 seats in each row. The program should display a screen that shows which seats are available and which are taken. For example, the following screen shows a chart depicting each seat in the theater. Seats that are taken are represented by an * symbol, and seats that are available are represented by a # symbol:
+
+
+
+Here is a list of tasks this program must perform:
+& When the program begins, it should ask the user to enter the seat prices for each row. The prices can be stored in a separate array. (Alternatively, the prices may be read from a file.)
+& Once the prices are entered, the program should display a seating chart similar to the one shown above. The user may enter the row and seat numbers for tickets being sold. Every time a ticket or group of tickets is purchased, the program should display the total ticket prices and update the seating chart.
+& The program should keep a total of all ticket sales. The user should be given an option of viewing this amount.
+& The program should also give the user an option to see a list of how many seats have been sold, how many seats are available in each row, and how many seats are available in the entire auditorium.
+Input Validation: When tickets are being sold, do not accept row or seat
+numbers that do not exist. When someone requests a particular seat, the program should make sure that seatis available beforeitissold.
+
+Assignment 6
+Write a presentation (Markdown format) with at least 20 slides to explain the following OOP topics in Python:
+& Constructor
+& Destructor
+
+Assignment 7
+Write a presentation (Markdown format) with at least 20 slides to explain the following OOP topics in Java:
+& Constructor
+& Destructor
+
+
