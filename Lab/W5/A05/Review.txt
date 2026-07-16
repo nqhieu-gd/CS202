@@ -1,0 +1,54 @@
+=== A05 — PYTHON POLYMORPHISM (Quick Review) ===
+
+1. DUCK TYPING
+   "If it walks like a duck..." — objects are defined by methods, not types
+   Any object with the matching method name can be used interchangeably
+   No inheritance required — method existence checked at runtime
+
+2. METHOD OVERRIDING
+   Child redefines parent method with same name
+   Call parent version: super().method()
+   Enables runtime polymorphism — same call, different behavior
+   Rules: same name and parameters; can extend via super()
+
+3. OPERATOR OVERLOADING
+   __add__ → +    __sub__ → -     __mul__ → *
+   __eq__  → ==   __lt__  → <     __str__ → str()
+   __repr__ → repr()   __getitem__ → obj[key]
+
+4. ABSTRACT BASE CLASSES (ABC)
+   from abc import ABC, abstractmethod
+   class Shape(ABC):
+       @abstractmethod
+       def area(self): pass
+   Cannot instantiate ABC — must subclass and implement all abstract methods
+
+5. singledispatch
+   @singledispatch on function, @func.register(type) for overloads
+   Dispatch on first argument type
+   Extensible without modifying existing code
+
+6. MIXINS
+   Small classes providing reusable behavior via multiple inheritance
+   class MyClass(MixinA, MixinB, Base): pass
+   Horizontal code reuse without deep hierarchy
+
+7. isinstance() / issubclass()
+   isinstance(obj, Class) — check object type at runtime
+   issubclass(Sub, Parent) — check inheritance
+   Prefer duck typing over isinstance() when possible
+
+8. CALLABLES
+   Any object with __call__() can be called like a function
+   Functions, lambdas, classes with __call__ are interchangeable
+
+9. COMMON MISTAKES
+   - Forgetting super().__init__() → breaks MRO chain
+   - Relying on isinstance() chains instead of duck typing
+   - Method name collisions in multiple inheritance → MRO determines winner
+   - Not handling AttributeError when duck typing fails
+
+10. COMPOSITION vs INHERITANCE
+    Inheritance: "is-a" — Dog is an Animal
+    Composition: "has-a" — Car has an Engine
+    Composition: more flexible, looser coupling, easier to test

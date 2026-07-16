@@ -1,0 +1,43 @@
+classDiagram
+    class BankAccount {
+        <<concrete>>
+        #string accountNumber
+        #string ownerName
+        #string socialID
+        #double balance
+        +<<constructor>> BankAccount()
+        +<<constructor>> BankAccount(acctNum, name, id, bal)
+        +<<constructor>> BankAccount(const BankAccount&)
+        +<<constructor>> BankAccount(acctNum, name)
+        +<<constructor>> BankAccount(acctNum)
+        +<<destructor>> ~BankAccount()
+        +<<virtual>> inputInfo() void
+        +<<virtual>> displayInfo() void
+        +<<virtual>> deposit(amount) void
+        +<<virtual>> withdraw(amount) bool
+        +<<virtual>> checkBalance() double
+    }
+
+    class SavingBankAccount {
+        <<concrete>>
+        -double annualRate
+        -int period
+        -int savingMonths
+        -bool freePeriod
+        +<<constructor>> SavingBankAccount()
+        +<<constructor>> SavingBankAccount(acctNum, name, id, bal, rate, per, months)
+        +<<constructor>> SavingBankAccount(const SavingBankAccount&)
+        +<<constructor>> SavingBankAccount(acctNum, name, rate, per, months)
+        +<<constructor>> SavingBankAccount(acctNum, rate, per, months)
+        +<<destructor>> ~SavingBankAccount()
+        +<<override>> inputInfo() void
+        +<<override>> displayInfo() void
+        +<<override>> deposit(amount) void
+        +<<override>> withdraw(amount) bool
+        +withdrawImmediately(amount) bool
+        +<<override>> checkBalance() double
+        +checkInterest() double
+        +getEffectiveRate() double
+    }
+
+    BankAccount <|-- SavingBankAccount

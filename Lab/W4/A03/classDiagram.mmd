@@ -1,0 +1,77 @@
+classDiagram
+    class CartItem {
+        <<concrete>>
+        #string name
+        #string variant
+        #double unitPrice
+        #int quantity
+        #bool checked
+        +<<constructor>> CartItem()
+        +<<constructor>> CartItem(name, variant, price, qty)
+        +<<constructor>> CartItem(const CartItem&)
+        +<<constructor>> CartItem(name, price)
+        +<<constructor>> CartItem(data)
+        +<<destructor>> ~CartItem()
+        +<<virtual>> displayInfo() void
+        +<<virtual>> getTotalPrice() double
+        +setChecked(c) void
+        +isChecked() bool
+        +adjustQuantity(delta) void
+        +getQuantity() int
+        +getName() string
+    }
+
+    class MainProduct {
+        <<concrete>>
+        -double originalPrice
+        +<<constructor>> MainProduct()
+        +<<constructor>> MainProduct(name, variant, price, qty, origPrice)
+        +<<constructor>> MainProduct(const MainProduct&)
+        +<<constructor>> MainProduct(name, price)
+        +<<constructor>> MainProduct(data)
+        +<<destructor>> ~MainProduct()
+        +<<override>> displayInfo() void
+    }
+
+    class FreeGift {
+        <<concrete>>
+        +<<constructor>> FreeGift()
+        +<<constructor>> FreeGift(name, variant, qty)
+        +<<constructor>> FreeGift(const FreeGift&)
+        +<<constructor>> FreeGift(name, qty)
+        +<<constructor>> FreeGift(data)
+        +<<destructor>> ~FreeGift()
+        +<<override>> displayInfo() void
+    }
+
+    class Shop {
+        <<concrete>>
+        -string name
+        -vector~CartItem~*~ items
+        -bool checked
+        +<<constructor>> Shop(name)
+        +<<destructor>> ~Shop()
+        +addItem(item) void
+        +displayInfo() void
+        +getTotalPrice() double
+        +getName() string
+        +setChecked(c) void
+        +isChecked() bool
+    }
+
+    class ShoppingCart {
+        <<concrete>>
+        -vector~Shop~*~ shops
+        +<<constructor>> ShoppingCart()
+        +<<destructor>> ~ShoppingCart()
+        +addShop(shop) void
+        +displayCart() void
+        +getTotalPrice() double
+        +getCheckedItemCount() int
+        +checkout() void
+    }
+
+    CartItem <|-- MainProduct
+    CartItem <|-- FreeGift
+    Shop o-- CartItem
+    ShoppingCart o-- Shop

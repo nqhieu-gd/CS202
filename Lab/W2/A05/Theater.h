@@ -13,6 +13,7 @@ private:
     bool seats[ROWS][SEATS_PER_ROW];
     double rowPrices[ROWS];
     double totalSales;
+    bool valid;
 
 public:
     Theater();
@@ -25,7 +26,8 @@ public:
     bool loadPricesFromFile(const string& filename);
     void displaySeatingChart() const;
     bool sellTicket(int row, int seat);
-    int sellGroup(int row, int startSeat, int count);
+    int sellConsecutive(int row, int startSeat, int count);
+    int sellGroup(int count);
     void showTotalSales() const;
     void showStats() const;
     string toString() const;

@@ -3,6 +3,7 @@ classDiagram
         - bool seats[15][30]
         - double rowPrices[15]
         - double totalSales
+        - bool valid
         + Theater()
         + Theater(const Theater& other)
         + ~Theater()
@@ -11,7 +12,8 @@ classDiagram
         + loadPricesFromFile(const string& filename) bool
         + displaySeatingChart() void
         + sellTicket(int row, int seat) bool
-        + sellGroup(int row, int startSeat, int count) int
+        + sellConsecutive(int row, int startSeat, int count) int
+        + sellGroup(int count) int
         + showTotalSales() void
         + showStats() void
         + toString() string

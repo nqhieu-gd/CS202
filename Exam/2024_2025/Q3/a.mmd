@@ -1,0 +1,38 @@
+classDiagram
+    class vehicle {
+        <<abstract>>
+        #string reg_num
+        #int rent_rate
+        #string model
+        #<<virtual>> quote(days) string
+        +<<virtual>> display() void
+    }
+    class car {
+        <<concrete>>
+        -int engine_capacity
+        -int discount
+        -<<override>> quote(days) string
+        -<<override>> display() void
+        +<<constructor>> car(reg_num, rate, model, capacity, discount)
+    }
+    class motorcycle {
+        <<concrete>>
+        -bool has_sidecar
+        -int sidecar_surcharge
+        -<<override>> quote(days) string
+        -<<override>> display() void
+        +<<constructor>> motorcycle(reg_num, rate, model, has_sidecar, sidecar_surcharge)
+    }
+    class bike {
+        <<concrete>>
+        -bool is_electric
+        -int battery_fee
+        -int discount
+        -<<override>> quote(days) string
+        -<<override>> display() void
+        +<<constructor>> bike(reg_num, rate, model, is_electric, battery_fee, discount)
+    }
+
+    vehicle<|---car
+    vehicle<|---motorcycle
+    vehicle<|---bike

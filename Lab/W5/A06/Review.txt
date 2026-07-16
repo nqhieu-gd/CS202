@@ -1,0 +1,61 @@
+=== A06 — JAVA POLYMORPHISM (Quick Review) ===
+
+1. TWO TYPES OF POLYMORPHISM
+   Compile-time (overloading): same name, different params — resolved at compile time
+   Runtime (overriding): same signature, different body — resolved at runtime via vtable
+
+2. METHOD OVERLOADING
+   Same method name, different parameter list (types, count, or order)
+   Return type alone is NOT sufficient for overloading
+   Resolved at compile time based on argument types
+   Example: print(int), print(String), print(double)
+
+3. METHOD OVERRIDING
+   Same signature: name + parameter list
+   @Override annotation — compiler checks it actually overrides
+   Rules: wider/no weaker access, covariant return, cannot be private/static/final
+   Resolved at runtime based on actual object type
+
+4. COVARIANT RETURN TYPE (Java 5+)
+   Override can return a subclass of the original return type
+   Example: Shape clone() → Circle clone()
+   Works for reference types only, NOT primitives
+
+5. ABSTRACT CLASSES
+   abstract class Shape { abstract double area(); }
+   Cannot be instantiated — must subclass and implement all abstract methods
+   Can have concrete methods + fields (unlike interfaces)
+
+6. INTERFACES
+   interface Flyable { void fly(); }
+   Multiple inheritance of behavior: class Duck implements Flyable, Swimmable
+   Java 8+: default methods (with body) and static methods in interfaces
+   Diamond problem (same default method in multiple interfaces):
+     Class MUST override and call Interface.super.method()
+
+7. POLYMORPHIC CONTAINERS
+   Animal[] animals = {new Dog(), new Cat()};
+   for (Animal a : animals) { a.speak(); }  // Runtime dispatch
+   List<Animal> list = new ArrayList<>();
+
+8. instanceof AND CASTING
+   a instanceof Dog — checks if a is a Dog (or subclass)
+   (Dog) a — downcast (only safe after instanceof check)
+   Avoid instanceof — prefer polymorphic dispatch
+
+9. super KEYWORD
+   super(args) — call parent constructor (MUST be first statement)
+   super.method() — call parent's overridden method
+   super.field — access parent's hidden field
+
+10. COMMON MISTAKES
+    - Calling overridable method from constructor → child's method runs before fields init
+    - Confusing overloading with overriding → different params != override
+    - Static methods NOT polymorphic → resolved by reference type, not object type
+    - Forgetting super() in constructor → parent field not initialized
+    - Using instanceof chains → defeats polymorphism
+
+11. DESIGN PATTERNS USING POLYMORPHISM
+    Template Method: abstract class defines algorithm skeleton, subclasses fill steps
+    Strategy: swap algorithms at runtime via interface
+    Visitor: externalize operations on object structure

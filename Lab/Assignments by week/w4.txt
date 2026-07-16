@@ -1,0 +1,107 @@
+Students are permitted to use AI assistance for this series of
+homework.
+If you do not use AI, Please include Declaration A in your README.md
+file: "I did not use AI for this homework."
+If you use AI, Please include Declaration B in your README.md file: "I
+did use AI for this homework." The expected workflow is that you
+prompt the AI, it generates a plan, you review that plan, the AI
+executes the action, and you review, edit, and re-prompt as needed.
+Ultimately, you bear full responsibility for the final result.
+
+
+Design class diagrams using Mermaid format and implement the required
+functionality in C++ for the following assignments. For your final submission,
+please ensure you include the C++ source code, the raw Mermaid syntax, and
+the rendered image files for each class diagram.
+Class diagram: https://en.wikipedia.org/wiki/Class_diagram
+Use stereotypes to annotate the meaning of classes and methods.
+<<interface>>, <<abstract>>, <<concrete>>, <<constructor>>,
+<<destructor>>, <<friend>>, <<static>>, <<virtual>>, <<pure
+virtual>>, <<override>>, <<operator>>.
+Ex: +<<pure virtual>> getSalary(): double
+
+
+Assignment 1 – Company
+Company ABC asks you to build an employee management system.
+The system should store the following info for each employee: employ id, full
+name, hire date, address.
+There are 2 types of employees in the company: Office employee and worker.
+Salary of an office employee in a month = number of his/her working days *
+pay rate per day (300.000 VND/day)
+Salary of a worker in a month = number of items he/she produced in the
+month * rate pay per item (5.000VND/item)
+In this week exercise, you are asked to create 3 classes: Employee,
+OfficeEmployee and Worker. OfficeEmployee and Worker extends/inherits from
+Employee.
+Then you must define and implement the following methods for each Employee
+classes.
+  > Input the information of an employee
+  > Print the information of an employee to console.
+  > Compute the salary in a month of an employee
+  > Define at least 5 constructors for each of 3 classes.
+
+
+Assignment 2 – Bank Account
+Define a class, named BankAccount with the following attributes and methods:
+Attributes:
+  > Account number
+  > Name of owner
+  > Social ID of owner
+  > Balance (money in the account)
+Methods:
+  > Input from keyboard.
+  > Print out to console.
+  > Deposit an amount of money.
+  > Withdraw an amount of money. After withdrawing, the balance should be
+equal or greater than 50.000 VND.
+  > Check the current balance.
+Then, define another class, named, SavingBankAccount,which extends /
+inherits from class BankAccount.
+The attributes and methods of new classes are below. Attributes:
+  > Account number
+  > Name of owner
+  > Social ID of owner
+  > Balance (money in the account)
+  > Annual interest rates, for example: 6% in a year (360 days)
+  > Period, for example, 1, 2, 3, 6 or 12 months.
+  > Number of saving months until now, for examples, 3 months.
+Methods:
+  > Input from keyboard.
+  > Print out to console.
+  > Deposite an amount of money. Do not allow the customer to deposit if the
+number of saving months < period. In fact, the bank teller will ask the
+customer to create a new saving account to store new amount of money.
+Lab04-Inheritance
+3
+  > Withdraw an amount of money. Do not allow the customer to withdraw if the
+number of saving months < period.
+  > Withdraw immediately. Then the saving account is considered as free-
+period one, and the interest rate is only 2%.
+  > Check the current balance. Remember to add the current amount of interest
+to the balance. Use balance, interest rate, period and number of saving
+months to compute the interest.
+  > Check the interest at this time.
+
+
+Assignment 3
+Draw a class diagram and write a simple console application in C++ to simulate
+the following screens.
+Write a report to explain your solution.
+Notes: in this lab, students should focus on products, quantities, unit prices,
+and the total price. Other features will be the focus of the following weeks.
+
+
+Assignment 4 – Inheritance in Python
+Write a presentation (Markdown format) with at least 20 slides to explain the
+following OOP concepts in Python:
+Inheritance
+Overriding method in the derived class.
+The order of constructor calls when a derived object is created.
+
+
+Assignment 5 – Inheritance in Java
+Write a presentation (Markdown format) with at least 20 slides to explain the
+following OOP concepts in Java:
+Inheritance
+Overriding method in the derived class.
+The order of constructor calls when a derived object is created

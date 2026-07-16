@@ -1,0 +1,107 @@
+Lab05-Polymorphism
+Lab05-Polymorphism
+VNU-HCM, HCMUS, FIT, SE
+CS202 - Programming Systems
+25A01 - 02
+DINH Ba Tien, PhD
+TRUONG Phuoc Loc, MSc
+HO Tuan Thanh, MSc
+💡 Students are permitted to use AI assistance for this series of
+homework.
+If you do not use AI, please include Declaration A in your README.md
+file: "I did not use AI for this homework."
+If you use AI, please include Declaration B in your README.md file: "I
+did use AI for this homework." The expected workflow is that you
+prompt the AI, it generates a plan, you review that plan, the AI
+executes the action, and you review, edit, and re-prompt as needed.
+Ultimately, you bear full responsibility for the final result.
+Design class diagrams using Mermaid format and implement the required
+functionality in C++ for the following assignments. For your final submission,
+please ensure you include the C++ source code, the raw Mermaid syntax, and
+the rendered image files for each class diagram.
+Class diagram: https://en.wikipedia.org/wiki/Class_diagram
+Lab05-Polymorphism
+1
+
+Use stereotypes to annotate the meaning of classes and methods.
+<<interface>>, <<abstract>>, <<concrete>>, <<constructor>>,
+<<destructor>>, <<friend>>, <<static>>, <<virtual>>, <<pure
+virtual>>, <<override>>, <<operator>>.
+Ex: +<<pure virtual>> getSalary(): double
+Assignment 1 – Company
+Company ABC asks you to build an employee management system.
+The system should store the following info for each employee: employ id, full
+name, hire date, address.
+There are 2 types of employees in the company: Office employee and worker.
+Salary of an office employee in a month = number of his/her working days *
+pay rate per day (300.000 VND/day)
+Salary of a worker in a month = number of items he/she produced in the
+month * rate pay per item (5.000VND/item)
+In this week exercise, you are asked to create 3 classes: Employee,
+OfficeEmployee and Worker. OfficeEmployee and Worker extends/inherits from
+Employee.
+Then you must define and implement the following methods for each Employee
+classes.
+  > Input the information of an employee
+  > Print the information of an employee to console.
+  > Compute the salary in a month of an employee
+  > Define at least 5 constructors for each of 3 classes.
+Then, define another class, Company, store all types of employees in a single
+array. And write the following methods for class Company:
+  > Input a list of employees.
+  > Print out the info of all employees in the company.
+  > Print out the total salary the company has to pay in a month.
+Lab05-Polymorphism
+2
+
+  > Print out all employees whose salaries are the biggest value in the
+company.
+Assignment 2 – Console
+What is printed to the console? Give a brief explanation.
+Assignment 3
+   > What is printed to the console? Give a brief explanation.
+   > Identify the memory issues in the above program and correct them.
+Lab05-Polymorphism
+3
+
+  > Write the input and output operators for class A and class B.
+Submit a report for Questions 1 and 2, and provide the full source code for
+Question 3.
+Assignment 4 – Prince and Princess
+A beautiful princess has been imprisoned by a witch in a fortified castle with N
+layers of gates. To enter the castle and rescue the princess, the prince must
+pass through all these gates. Each gate is guarded by a gatekeeper, and there
+are three types of gates.
+Business Gate: The gatekeeper here is a merchant. To pass through, the
+prince must buy an amount of products from the merchant, with the cost
+calculated as unit price * quantity.
+Academic gate: The gatekeeper here is a sage. To pass through, the prince
+must answer the sageʼs question. The question has a specified intelligence
+level and the princeʼs IQ level must be equal to or greater than this level to
+answer correctly. Of course, answering a question does not reduce the
+princeʼs IQ.
+Power gate: The gatekeeper here is a warrior. To pass through, the prince
+must defeat the warrior. The warrior has a strength level, and the prince
+must have a strength level equal to or greater than the warriorʼs to succeed.
+After winning the battle, the princeʼs strength level will be slightly reduced.
+Students are asked to apply OOP principles (encapsulation, data hiding,
+inheritance, polymorphism) to create a class diagram and write a C++ program
+that performs the following tasks:
+  > Input the princeʼs initial parameters: money, IQ level, strength level, and the
+information of the castle with n gates.
+  > The program will determine if the prince can rescue the princess. If he can,
+the program should display the princeʼs remaining parameters. If not, it
+should display a list of remaining gates.
+Assignment 5 – Inheritance in Python
+Write a presentation (Markdown format) with at least 20 slides to explain the
+following OOP concepts in Python:
+Lab05-Polymorphism
+4
+
+Polymorphism
+Assignment 6 – Inheritance in Java
+Write a presentation (Markdown format) with at least 20 slides to explain the
+following OOP concepts in Java:
+Polymorphism
+Lab05-Polymorphism
+5

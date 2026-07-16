@@ -11,20 +11,20 @@ Student::Student() : id(0), fullname(nullptr), address(nullptr), gpa(0.0) {
     cout << "Student::Default constructor" << endl;
 }
 
-Student::Student(int id, const char* name) : id(id), gpa(0.0) {
+Student::Student(int id, const char* name) : id(id), fullname(nullptr), address(nullptr), gpa(0.0) {
     cout << "Student::Constructor(int id, const char* name)" << endl;
     fullname = dup_str(name);
     address = dup_str("");
 }
 
 Student::Student(int id, const char* fullname, const char* address, double gpa)
-    : id(id), gpa(gpa) {
+    : id(id), fullname(nullptr), address(nullptr), gpa(gpa) {
     cout << "Student::Constructor(int, char*, char*, double)" << endl;
     this->fullname = dup_str(fullname);
     this->address = dup_str(address);
 }
 
-Student::Student(const Student& other) : id(other.id), gpa(other.gpa) {
+Student::Student(const Student& other) : id(other.id), fullname(nullptr), address(nullptr), gpa(other.gpa) {
     cout << "Student::Copy constructor" << endl;
     fullname = dup_str(other.fullname);
     address = dup_str(other.address);
@@ -33,7 +33,7 @@ Student::Student(const Student& other) : id(other.id), gpa(other.gpa) {
 // Format: "id|fullname|address|gpa"
 // Example: "103|Le Van C|789 Pasteur, Q3, HCMC|3.50"
 // Pipe (|) is used as delimiter because names/addresses may contain commas.
-Student::Student(string s) {
+Student::Student(string s) : fullname(nullptr), address(nullptr) {
     cout << "Student::Constructor(string s)" << endl;
 
     stringstream ss(s);

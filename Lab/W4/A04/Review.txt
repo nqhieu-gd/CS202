@@ -1,0 +1,62 @@
+=== A04 — PYTHON INHERITANCE (Quick Review) ===
+
+1. BASIC SYNTAX
+   class Child(Parent):        # Child inherits from Parent
+   class Child(P1, P2):        # Multiple inheritance
+
+2. super()
+   super().__init__(args)      # Call parent's constructor
+   super().method()            # Call parent's method (follows MRO)
+   Zero-arg in Python 3 only   # Python 2: super(Child, self).method()
+
+3. METHOD OVERRIDING
+   - Redefine parent method with same name
+   - Call parent version: super().method()
+   - Extend: super() + extra logic (not a full replacement)
+   - Override: no super() call (complete replacement)
+   - Enables polymorphism — same method name, different behavior
+
+4. CONSTRUCTOR CALL ORDER (SINGLE INHERITANCE)
+   Child.__init__ → Parent.__init__ → Grandparent.__init__ → ... → object
+   Each level should call super().__init__() to chain upward
+   Missing super() breaks the chain — parent's init never runs!
+
+5. CONSTRUCTOR CALL ORDER (MULTIPLE INHERITANCE)
+   class C(A, B): pass
+   MRO: C → A → B → object
+   Child.__init__ → A.__init__ → B.__init__ → object.__init__
+   Order determined by C3 Linearization Algorithm (__mro__ attribute)
+
+6. MRO KEY RULES
+   - Child before parent
+   - Parents in declaration order
+   - object always last
+   Check: ClassName.__mro__ or ClassName.mro()
+
+7. ABC (ABSTRACT BASE CLASSES)
+   from abc import ABC, abstractmethod
+   class Shape(ABC):
+       @abstractmethod
+       def area(self): pass
+   Cannot instantiate Shape() — must subclass and implement all abstract methods
+
+8. MIXINS
+   - Small classes providing reusable behavior
+   - Not meant to stand alone — combined via multiple inheritance
+   class MyClass(MixinA, MixinB, BaseClass): pass
+
+9. isinstance() / issubclass()
+   isinstance(obj, Class)      # Is obj an instance of Class (or subclass)?
+   issubclass(Sub, Parent)     # Does Sub inherit from Parent?
+   isinstance(dog, Animal)     # True — even if dog is a Dog
+
+10. COMMON MISTAKES
+    - Forgetting super().__init__() → parent attributes missing
+    - Deep hierarchy (3+ levels) → hard to maintain
+    - Method name collisions in multiple parents → depends on MRO order
+    - Overriding without understanding the parent's contract
+
+11. INHERITANCE vs COMPOSITION
+    Inheritance: "is-a" (Dog is an Animal)
+    Composition: "has-a" (Car has an Engine)
+    Prefer composition for flexibility unless clear "is-a" relationship

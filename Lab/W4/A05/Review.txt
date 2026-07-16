@@ -1,0 +1,63 @@
+=== A05 — JAVA INHERITANCE (Quick Review) ===
+
+1. BASIC SYNTAX
+   class Child extends Parent { }    // Single inheritance only
+   class MyClass extends Object      // Implicit — root of hierarchy
+
+2. The `super` Keyword
+   super(args)          // Call parent constructor (MUST be first statement)
+   super.method()       // Call parent's overridden method
+   super.field          // Access parent's field (if hidden)
+
+3. METHOD OVERRIDING
+   - Same signature, @Override annotation recommended
+   - Rules: same name, params, return type (or covariant), wider/no weaker access
+   - Cannot override: private, static, final methods
+   - Covariant return type: can return subclass of the original return type
+
+4. CONSTRUCTOR CALL ORDER (SINGLE INHERITANCE)
+   new Child() → Parent.__init__ → ... → Object.__init__ → Child body
+   super() is inserted by compiler if not written explicitly
+   If parent has NO no-arg constructor, you MUST call super(args) explicitly
+
+5. CONSTRUCTOR CALL ORDER (CHAIN)
+   new C() → A.__init__ → B.__init__ → C body (A extends B extends C would be A→B→C)
+   Java resolves: Object → ... → Grandparent → Parent → Child
+
+6. ACCESS MODIFIERS
+   public      — everywhere
+   protected   — package + subclasses (even in different packages)
+   default     — package only
+   private     — class only (not inherited)
+
+7. ABSTRACT CLASSES
+   abstract class Shape { abstract double area(); }
+   - Cannot be instantiated
+   - Can have abstract methods (no body) and concrete methods (with body)
+   - Abstract methods MUST be overridden in first concrete subclass
+
+8. INTERFACES
+   interface Flyable { void fly(); }
+   - Multiple inheritance of behavior: class Duck implements Flyable, Swimmable
+   - Java 8+: default methods, static methods in interfaces
+   - Diamond problem resolved by explicit override with Interface.super.method()
+
+9. POLYMORPHISM
+   Animal a = new Dog();    // Reference = parent, Object = child
+   a.speak();               // Runtime method lookup → Dog's version
+   a.bark();                // COMPILE ERROR: Animal has no bark()
+   Use instanceof + cast for child-specific methods
+
+10. HIDING vs OVERRIDING
+    Fields: always hidden (both copies exist, accessed by reference type)
+    Static methods: hidden, NOT polymorphic (resolved at compile time)
+    Instance methods: overridden, polymorphic (resolved at runtime)
+
+11. DANGEROUS PATTERN
+    Calling overridable method from constructor:
+    Parent.__init__ calls init() → Child's init() runs before Child fields initialized
+
+12. final Keyword
+    final class         — cannot be extended
+    final method        — cannot be overridden
+    final variable      — cannot be reassigned (constant)

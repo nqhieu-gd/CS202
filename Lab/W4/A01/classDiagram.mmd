@@ -1,0 +1,62 @@
+classDiagram
+    class Date {
+        <<concrete>>
+        -int day
+        -int month
+        -int year
+        +<<constructor>> Date()
+        +<<constructor>> Date(d, m, y)
+        +display() void
+        +getDay() int
+        +getMonth() int
+        +getYear() int
+    }
+
+    class Employee {
+        <<abstract>>
+        #string empId
+        #string fullName
+        #Date hireDate
+        #string address
+        +<<constructor>> Employee()
+        +<<constructor>> Employee(id, name, date, address)
+        +<<constructor>> Employee(const Employee&)
+        +<<constructor>> Employee(id, date)
+        +<<constructor>> Employee(data)
+        +<<destructor>> ~Employee()
+        +<<virtual>> inputInfo() void
+        +<<virtual>> displayInfo() void
+        +<<pure virtual>> getSalary() double
+    }
+
+    class OfficeEmployee {
+        <<concrete>>
+        -int workingDays
+        +<<constructor>> OfficeEmployee()
+        +<<constructor>> OfficeEmployee(id, name, date, address, days)
+        +<<constructor>> OfficeEmployee(const OfficeEmployee&)
+        +<<constructor>> OfficeEmployee(id, date, days)
+        +<<constructor>> OfficeEmployee(data)
+        +<<destructor>> ~OfficeEmployee()
+        +<<override>> inputInfo() void
+        +<<override>> displayInfo() void
+        +<<override>> getSalary() double
+    }
+
+    class Worker {
+        <<concrete>>
+        -int producedItems
+        +<<constructor>> Worker()
+        +<<constructor>> Worker(id, name, date, address, items)
+        +<<constructor>> Worker(const Worker&)
+        +<<constructor>> Worker(id, date, items)
+        +<<constructor>> Worker(data)
+        +<<destructor>> ~Worker()
+        +<<override>> inputInfo() void
+        +<<override>> displayInfo() void
+        +<<override>> getSalary() double
+    }
+
+    Employee <|-- OfficeEmployee
+    Employee <|-- Worker
+    Employee *-- Date
