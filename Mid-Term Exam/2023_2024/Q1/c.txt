@@ -1,0 +1,5 @@
+private members are hidden from the derived class and external functions/classes for whatever type of inheritance it is
+
+protected members are visible for derived classes and their own derived classes, but hidden to external functions/classes for public and protected inheritance
+
+public class members are visible for every function/class for public inheritance, become protected for protected inheritance and hidden for private inheritance

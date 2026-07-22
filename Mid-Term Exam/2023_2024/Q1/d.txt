@@ -1,0 +1,5 @@
+we turn a function to a pure virtual function to remind the system that we are supposed to override it everytime we declare
+a new derived class, if we forget the system will throw an error and let us know we need to implement the overridden function
+
+a class with a pure virtual function becomes an abstract class, you can not initialize an abstract class as a concrete object,
+only a pointer of that class's type

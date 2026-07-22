@@ -1,18 +1,18 @@
-# W4 Lab — Inheritance (AI-Assisted Work)
+# W5 Lab — Polymorphism & Memory Management (AI-Assisted Work)
 
 **Student**: Nguyen Quang Hieu - 25125043
 **Course**: CS202 - Programming Systems
-**Week**: Week 4
+**Week**: Week 5
 
 ## AI Usage Declaration
 
 **Declaration B: I did use AI for this homework.**
 
-I used AI to assist with generating the initial presentation content and slide outlines for A04 (Python Inheritance). The expected workflow was followed:
+I used AI to assist with implementing, fixing, and documenting the W5 assignments. The expected workflow was followed:
 
-1. **AI generated a plan** — I prompted the AI to create a slide deck on inheritance in Python covering the three required topics: inheritance syntax, method overriding, and constructor call order.
-2. **I revised the plan myself** — After reviewing the AI's initial outline, I reorganized the slide sequence, adjusted depth of coverage, and ensured topics matched the assignment requirements.
-3. **I piloted the AI to fix specific issues** — I identified formatting inconsistencies in the assignment description and directed the AI to correct them. I also reviewed the generated content for correctness, ensuring technical accuracy in OOP concepts.
-4. **I checked and verified the final work** — I reviewed every slide, verified the presentation compiles correctly in Markdown, and confirmed all three required topics (inheritance, overriding, constructor call order) are covered with at least 20 slides.
+1. **AI generated code and analysis** — I prompted the AI to produce initial implementations for A01 (Company employee management), fix bugs in A03 and A04, and help with console output analysis for A02.
+2. **I revised and directed fixes** — After reviewing the AI's output, I identified spec violations (e.g., `displaySalaries` showing per-employee detail instead of just total payroll, `Company::operator=` having empty body, `Merchant` constructor missing quantity parameter) and directed corrections.
+3. **I piloted the AI to fix specific issues** — I reviewed every constructor, deduction logic, deep copy implementation, and I/O operator for correctness. I directed fixes for memory leaks, missing default constructors, duplicate destructor definitions, and missing forward declarations.
+4. **I checked and verified the final work** — I verified all A01–A06 files compile correctly and match assignment specifications.
 
 I bear full responsibility for the final result.

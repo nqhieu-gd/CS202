@@ -1,0 +1,186 @@
+﻿Lab06-Composite
+
+Lab06-Composite
+VNU-HCM, HCMUS, FIT, SE
+
+CS202 - Programming Systems
+
+25A01 - 02
+
+DINH Ba Tien, PhD
+
+TRUONG Phuoc Loc, MSc
+
+HO Tuan Thanh, MSc
+
+A: YY: 01
+
+H: YY: 03
+
+💡 Students are permitted to use AI assistance for this series of
+homework.
+If you do not use AI: Please include Declaration A in your README.md
+file: "I did not use AI for this homework."
+If you use AI: Please include Declaration B in your README.md file: "I
+did use AI for this homework." The expected workflow is that you
+prompt the AI, it generates a plan, you review that plan, the AI
+executes the action, and you review, edit, and re-prompt as needed.
+Ultimately, you bear full responsibility for the final result.
+
+Design class diagrams using Mermaid format and implement the required
+functionality in C++ for the following assignments. For your final submission,
+please ensure you include the C++ source code, the raw Mermaid syntax, and
+the rendered image files for each class diagram.
+
+Class diagram: https://en.wikipedia.org/wiki/Class_diagram
+
+Lab06-Composite 1
+
+
+
+Use stereotypes to annotate the meaning of classes and methods.
+
+<<interface>>, <<abstract>>, <<concrete>>, <<constructor>>, 
+
+<<destructor>>, <<friend>>, <<static>>, <<virtual>>, <<pure 
+
+virtual>>, <<override>>, <<operator>>.
+
+Ex: +<<pure virtual>> getSalary(): double
+
+Assignment 1 – LMS
+You are asked to develop a system for managing the learning content offered in
+its online courses. Each course may contain different types of learning
+materials, such as instructional videos and quizzes. These learning materials
+share several common characteristics, including a title, an estimated
+completion duration, and the ability to display their information. However, each
+type of learning material also has its own specific attributes and rules.
+
+A Video represents a recorded instructional lesson. In addition to its title,
+each video has a fixed duration measured in minutes. When its information
+is displayed, the system should show the title of the video and its duration.
+
+A Quiz represents an assessment containing a specified number of
+questions. The estimated completion duration of a quiz is calculated based
+on the number of questions, assuming that a student requires
+approximately two minutes to complete each question. When its information
+is displayed, the system should show the title of the quiz, the number of
+questions, and its estimated completion duration.
+
+The company also organizes its learning content into Modules. A module
+has a title and may contain multiple learning items. These items may be
+videos, quizzes, or even other modules. Therefore, the system must
+support modules nested inside other modules. The total duration of a
+module is calculated as the sum of the durations of all learning items
+contained directly or indirectly within it.
+
+For example, a module titled “Introduction to Object-Oriented Programming”
+may contain:
+
+a video titled “Classes and Objects” with a duration of 25 minutes;
+
+a quiz titled “Basic OOP Concepts” containing 5 questions;
+
+Lab06-Composite 2
+
+
+
+another module titled “Inheritance and Polymorphism”, which contains
+additional videos and quizzes.
+
+The system must allow videos, quizzes, and modules to be treated uniformly as
+learning items. A client should be able to request the duration or display the
+details of any learning item without needing to determine whether the object is
+a video, a quiz, or a module.
+
+When displaying a module, the program should display the module’s title and 
+total duration, followed by the details of all its child learning items. Nested
+learning items should be indented appropriately so that the hierarchical
+structure of the course content can be clearly seen.
+
+An example output could be (please note the indentation):
+
+[Module] Introduction to Object-Oriented Programming (1h 15
+
+m)
+
+  [Video] Classes and Objects (0h 25m)
+
+  [Quiz] Basic OOP Concepts (5 questions, 0h 10m)
+
+  [Module] Inheritance and Polymorphism (0h 40m)
+
+    [Video] Introduction to Inheritance (0h 20m)
+
+    [Quiz] Polymorphism Quiz (10 questions, 0h 20m)
+
+The design for the system should be flexible and ready for future expansion of
+additional types of learning content, such as programming exercises, reading
+materials, assignments, or interactive labs without significantly modifying the
+existing program. The system must also apply the inheritance and
+polymorphism. It should also apply the design pattern so that individual
+learning items and groups of learning items can be processed through the
+same common interface.
+
+The program must properly manage dynamically created objects. The
+ownership and lifetime of learning items should be clearly defined, and all
+allocated memory must be released correctly to prevent memory leaks,
+dangling pointers, double deletion, or application crashes.
+
+You are asked to complete the following tasks:
+
+1. Load a list of learning items from a text-based file. Provide your input file in
+the submission
+
+2. Displays the complete hierarchical structure of a module with suitable
+indentation using runtime polymorphism with detailed information for each
+
+Lab06-Composite 3
+
+
+
+learning item including their titles, durations or number of questions if it is a
+quiz.
+
+Notes:
+
+A quiz requires two minutes per question.
+
+A module’s duration is the sum of the durations of all its children.
+
+A module may contain videos, quizzes, or other modules.
+
+The implementation must use runtime polymorphism rather than explicit type
+checking.
+
+Assignment 2 – Advanced Features in
+Python
+Write a presentation (Markdown format) with at least 20 slides to explain the
+advanced OOP concepts in Python such as:
+
+Multi-inheritance
+
+Interface
+
+Inner class
+
+Nested class
+
+Lamda expression
+
+Assignment 3 – Advanced Features in
+Java
+Write a presentation (Markdown format) with at least 20 slides to explain the
+advanced OOP concepts in Java such as:
+
+Multi-inheritance
+
+Interface
+
+Inner class
+
+Nested class
+
+Lamda expression
+
+Lab06-Composite 4

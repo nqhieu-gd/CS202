@@ -1,0 +1,6 @@
+a shallow copy is, true to it name, a copy of the base object that keeps everything similar from the contents inside to the
+object its pointers point to, a shallow copy is made without any allocation
+
+a deep copy is, on the other hand, a copy of the base object that keeps all the contents inside, but for external data like
+pointers' dereference will be allocate dynamically and assign accordingly, meaning the object they point to are not the same
+one the base's pointers point to

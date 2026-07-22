@@ -61,7 +61,7 @@ std::string motorcycle::quote(int days) {
 }
 
 std::string bike::quote(int days) {
-    return "Bike Quote: " + std::to_string(rent_rate * days * (1 - (float)discount/100) + (is_electric ? battery_fee : 0)) + '.';
+    return "Bike Quote: " + std::to_string(rent_rate * days * ((float)(100 - (is_electric ? discount : 0)) / 100) + (is_electric ? battery_fee : 0)) + '.';
 }
 
 int main() {

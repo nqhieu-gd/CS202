@@ -1,0 +1,6 @@
+encapsulation is a property of object oriented programming, in which you gather all properties and behaviors of the same object
+to a same package (class)
+
+data hiding is a method in object oriented programming that ensure all properties are properly hidden, it will be changed
+via the object's own behavior and sometimes get changed indirectly by the environment via some functions of the object, but
+never get exposed fully to the world

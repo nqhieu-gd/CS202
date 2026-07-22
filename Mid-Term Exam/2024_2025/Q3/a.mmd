@@ -4,8 +4,9 @@ classDiagram
         #string reg_num
         #int rent_rate
         #string model
-        #<<virtual>> quote(days) string
+        +<<virtual>> quote(days) string
         +<<virtual>> display() void
+        +<<destructor>> ~vehicle()
     }
     class car {
         <<concrete>>

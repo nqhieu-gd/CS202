@@ -1,0 +1,8 @@
+3 4 4 Deep Nesting Test Module
+1 10 3 Intro to Video
+2 3 2 Short Quiz
+3 2 2 Mid Module
+2 5 3 Quiz Inside Mid
+1 30 3 Video Inside Mid
+3 1 1 Innermost
+1 5 2 Deep Video

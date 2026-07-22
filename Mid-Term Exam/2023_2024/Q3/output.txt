@@ -1,0 +1,16 @@
+create d1:
+B::Constr
+Inter::Constr
+D::Constr
+
+Calling:
+byValue
+B::Show
+B::Destr
+byRef
+D::Show
+
+End of Main
+D::Destr
+Inter::Destr
+B::Destr

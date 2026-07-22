@@ -1,0 +1,41 @@
+classDiagram
+    class book {
+        +string title
+        +string author
+        +string ISBN
+        +bool isCOed
+        +<<virtual>> CO() void
+        +<<virtual>> CO(days) void
+        +<<virtual>> CO(user_id) void
+        +<<virtual>> CO(user_id, days) void
+    }
+    class printed {
+        +int page
+    }
+    class ebook {
+        +float size
+        +<<override>> CO() void
+        +<<override>> CO(days) void
+        +<<override>> CO(user_id) void
+        +<<override>> CO(user_id, days) void
+        +CO_part(int start, int end) void
+    }
+    class audio {
+        +int duration
+        +<<override>> CO() void
+        +<<override>> CO(days) void
+        +<<override>> CO(user_id) void
+        +<<override>> CO(user_id, days) void
+        +CO_part(int start, int end) void
+    }
+    class library {
+        +vector~book*~ books
+        +void add(b)
+        +void COBook(ISBN)
+        +~library()
+    }
+
+    book<|---printed
+    book<|---ebook
+    book<|---audio
+    library*---book
