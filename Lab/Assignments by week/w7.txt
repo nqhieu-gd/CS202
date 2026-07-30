@@ -1,0 +1,157 @@
+﻿Lab07-Template
+
+Lab07-Template
+VNU-HCM, HCMUS, FIT, SE
+
+CS202 - Programming Systems
+
+25A01 - 02
+
+DINH Ba Tien, PhD
+
+TRUONG Phuoc Loc, MSc
+
+HO Tuan Thanh, MSc
+
+A: YY: 01
+
+H: YY: 03
+
+💡 Students are permitted to use AI assistance for this series of
+homework.
+If you do not use AI: Please include Declaration A in your README.md
+file: "I did not use AI for this homework."
+If you use AI: Please include Declaration B in your README.md file: "I
+did use AI for this homework." The expected workflow is that you
+prompt the AI, it generates a plan, you review that plan, the AI
+executes the action, and you review, edit, and re-prompt as needed.
+Ultimately, you bear full responsibility for the final result.
+
+Design class diagrams using Mermaid format and implement the required
+functionality in C++ for the following assignments. For your final submission,
+please ensure you include the C++ source code, the raw Mermaid syntax, and
+the rendered image files for each class diagram.
+
+Class diagram: https://en.wikipedia.org/wiki/Class_diagram
+
+Lab07-Template 1
+
+
+
+Use stereotypes to annotate the meaning of classes and methods.
+
+<<interface>>, <<abstract>>, <<concrete>>, <<constructor>>, 
+
+<<destructor>>, <<friend>>, <<static>>, <<virtual>>, <<pure 
+
+virtual>>, <<override>>, <<operator>>.
+
+Ex: +<<pure virtual>> getSalary(): doubl
+
+Assignment 1 - My Vector
+Define the following methods for your own class, MyVector, a class template.
+
+In the main() function, create a vector of integers and a vector of fractions to
+test your defined methods.
+
+Apply exception handling mechanism by throw exceptions in specific methods
+and try…catch… in the main() function.
+
+template<class T>
+
+class MyVector{
+
+private:
+
+T *arr;
+
+int size;
+
+public:
+
+// empty array
+
+MyVector();
+
+// n zeros
+
+MyVector(int n);
+
+MyVector(T *a, int n);
+
+MyVector(const MyVector &v);
+
+~MyVector();
+
+int getSize();
+
+T getItem(int index);
+
+void setItem(T value, int index);
+
+Lab07-Template 2
+
+
+
+void add(T value);
+
+void addRange(T *a, int n);
+
+void clear();
+
+bool contains(T value);
+
+void toArray(T *arr, int &n);
+
+bool equals(const MyVector &v);
+
+int indexOf(T value);
+
+int lastIndexOf(T value);
+
+void insert(T value, int index);
+
+void remove(T value);
+
+void removeAt(int index);
+
+void reverse();
+
+string toString();
+
+void sortAsc();
+
+void sortDesc();
+
+};
+
+Assignment 2
+Draw a class diagram and write a simple console application in C++ to simulate
+the following screens.
+
+Write a report to explain your solution.
+
+New requirements:
+
+Product information will be loaded from a text file.
+
+Orders will be saved to a text file.
+
+Support at least one type of promotion. For example: The system will offer a
+10% discount that applied only if the total bill is equal or greater than
+200,000 VND.
+
+Lab07-Template 3
+
+
+
+Assignment 3
+
+Lab07-Template 4
+
+
+
+Write a presentation (Markdown format) with at least 20 slides to explain the
+functional programming concepts in Python.
+
+Lab07-Template 5

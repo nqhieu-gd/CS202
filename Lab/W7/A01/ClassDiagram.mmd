@@ -1,0 +1,32 @@
+classDiagram
+    class MyVector~T~ {
+        <<concrete>>
+        -int size
+        -T* arr
+        -int capacity
+        -<<concrete>> sort(int i, int bg, int en) void
+        +<<constructor>> MyVector()
+        +<<constructor>> MyVector(int n)
+        +<<constructor>> MyVector(T* a, int n)
+        +<<constructor>> MyVector(const MyVector& v)
+        +<<destructor>> ~MyVector()
+        +<<concrete>> getSize() int
+        +<<concrete>> getItem(int index) T
+        +<<concrete>> setItem(T value, int index) void
+        +<<concrete>> add(T value) void
+        +<<concrete>> addRange(T* a, int n) void
+        +<<concrete>> clear() void
+        +<<concrete>> contains(T value) bool
+        +<<concrete>> toArray(T* arr, int& n) void
+        +<<concrete>> equals(const MyVector& v) bool
+        +<<concrete>> indexOf(T value) int
+        +<<concrete>> lastIndexOf(T value) int
+        +<<concrete>> insert(T value, int index) void
+        +<<concrete>> remove(T value) void
+        +<<concrete>> removeAt(int index) void
+        +<<concrete>> reverse() void
+        +<<concrete>> toString() std::string
+        +<<concrete>> sortAsc() void
+        +<<concrete>> sortDesc() void
+    }
+

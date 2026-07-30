@@ -10,21 +10,22 @@ using std::vector;
 class mt {
 protected:
     string title;
-    int dur;
 public:
     virtual void display(int i) = 0;
     int durHour() const;
-    int getDur() const;
+    virtual int getDur() const = 0;
 
     mt();
-    mt(string title, int dur);
+    mt(string title);
     virtual ~mt() = default;
 };
 
 class video : public mt {
 private:
+    int dur;
 public:
     void display(int i) override;
+    int getDur() const override;
 
     video(string title, int dur);
 };
@@ -34,6 +35,7 @@ private:
     int num;
 public:
     void display(int i) override;
+    int getDur() const override;
 
     quiz(string title, int num);
 };
@@ -44,9 +46,11 @@ private:
 public:
     void add(mt* ct);
     void display(int i) override;
+    int getDur() const override;
 
     module(string title);
     ~module();
 };
 
 void fin(std::istream& is, module& mdl, int size);
+

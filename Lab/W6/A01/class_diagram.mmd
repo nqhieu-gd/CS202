@@ -1,0 +1,53 @@
+classDiagram
+    class mt {
+        <<abstract>>
+        #title : string
+        +<<constructor>> mt()
+        +<<constructor>> mt(string title)
+        +<<virtual>> <<destructor>> ~mt()
+        +<<pure virtual>> display(int i) void
+        +<<pure virtual>> getDur() int
+        +<<concrete>> durHour() int
+    }
+
+    class video {
+        <<concrete>>
+        -dur : int
+        +<<constructor>> video(string title, int dur)
+        +<<override>> display(int i) void
+        +<<override>> getDur() int
+    }
+
+    class quiz {
+        <<concrete>>
+        -num : int
+        +<<constructor>> quiz(string title, int num)
+        +<<override>> display(int i) void
+        +<<override>> getDur() int
+    }
+
+    class module {
+        <<concrete>>
+        -cts : vector~mt*~
+        +<<constructor>> module(string title)
+        +<<destructor>> ~module()
+        +<<concrete>> add(mt* ct) void
+        +<<override>> display(int i) void
+        +<<override>> getDur() int
+    }
+
+    class Course {
+        <<concrete>>
+        -list : vector~mt*~
+        +<<constructor>> Course()
+        +<<destructor>> ~Course()
+        +<<concrete>> push(mt* cpn) void
+        +<<concrete>> gen(ifstream& is) void
+        +<<concrete>> display() void
+    }
+
+    mt <|-- video : inherits
+    mt <|-- quiz : inherits
+    mt <|-- module : inherits
+    module "1" o-- "*" mt : contains (cts)
+    Course "1" o-- "*" mt : manages (list)

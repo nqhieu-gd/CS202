@@ -5,43 +5,55 @@
 using std::cout;
 
 int mt::durHour() const {
-    return dur/60;
+    return getDur() / 60;
 }
 
-int mt::getDur() const {
+mt::mt(): title("") {}
+
+mt::mt(string title): title(title) {}
+
+int video::getDur() const {
     return dur;
 }
 
-mt::mt(): title(""), dur(0) {}
-
-mt::mt(string title, int dur): title(title), dur(dur) {}
-
 void video::display(int i) {
-    cout << "[Video] " << title << " (" << durHour() << "h " << dur%60 << "m)\n";
+    cout << "[Video] " << title << " (" << durHour() << "h " << getDur() % 60 << "m)\n";
 }
 
-video::video(string title, int dur): mt(title, dur) {}
+video::video(string title, int dur): mt(title), dur(dur) {}
+
+int quiz::getDur() const {
+    return num * 2;
+}
 
 void quiz::display(int i) {
-    cout << "[Quiz] " << title << " (" << num << " questions, " << durHour() << "h " << dur%60 << "m)\n";
+    cout << "[Quiz] " << title << " (" << num << " questions, " << durHour() << "h " << getDur() % 60 << "m)\n";
 }
 
-quiz::quiz(string title, int num): mt(title, num*2), num(num) {}
+quiz::quiz(string title, int num): mt(title), num(num) {}
 
 void module::add(mt* ct) {
     cts.push_back(ct);
-    dur += ct->getDur();
+}
+
+int module::getDur() const {
+    int total = 0;
+    for (auto* c : cts) {
+        if (c != nullptr) total += c->getDur();
+    }
+    return total;
 }
 
 void module::display(int i) {
-    cout << "[Module] " << title << " (" << durHour() << "h " << dur%60 << "m)\n";
+    int d = getDur();
+    cout << "[Module] " << title << " (" << durHour() << "h " << d % 60 << "m)\n";
     for (auto* c : cts) {
         for (int j = 0; j <= i; j++) std::cout << "   ";
         c->display(i + 1);
     }
 }
 
-module::module(string title): mt(title, 0) {}
+module::module(string title): mt(title) {}
 
 module::~module() {
     for (auto* c : cts) if (c != nullptr) delete c;
@@ -73,3 +85,4 @@ void fin(std::istream& is, module& mdl, int size) {
         }
     }
 }
+
